@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title>Curso Java Script</title>
+	</head>
+	<body>
+
+		<div id="app">
+			<input id="nome"/>
+		</div>
+
+		<script>
+			// Lidando com Elementos
+			
+			console.log("Lidando com Elementos");
+
+			var linkElement = document.createElement('a');
+
+			linkElement.setAttribute('href', 'https://www.google.com.br');
+			linkElement.setAttribute('title', 'Site do Google');
+
+			var textElement = document.createTextNode('Acessar o site GOOGLE');
+
+			linkElement.appendChild(textElement);
+
+			var containerElement = document.querySelector('#app');
+			
+			containerElement.appendChild(linkElement);
+
+			var inputElement = document.querySelector('#nome');
+
+			containerElement.removeChild(inputElement);						// Remove o elemento input!
+		</script>
+	</body>
+</html>

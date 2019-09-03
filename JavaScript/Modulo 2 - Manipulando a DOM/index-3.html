@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>Curso Java Script</title>
+	</head>
+	<body>
+
+		<div id="app">
+			<input type="text" name="nome"/>
+			<input type="text" name="nome2"/>
+			<button class="botao">Adicionar</button>
+		</div>
+
+		<script>
+			// Trabalhando com a DOM parte 2
+			
+			console.log("Trabalhando com a DOM parte 2");
+
+			//var inputElement = document.querySelectorAll('input');			// Retorna todos os elementos
+
+			// var inputElement = document.querySelector('div#app input');
+
+			var inputElement = document.querySelector('input[name=nome]');
+
+			console.log(inputElement);
+
+			var btnElement = document.querySelector('button.botao');			// class="botao"
+
+			btnElement.onclick = function(){
+
+				var text = inputElement.value;
+
+				alert(text);
+			}
+			
+		</script>
+	</body>
+</html>

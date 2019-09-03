@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Curso Java Script</title>
+	</head>
+	<body>
+		<script>
+			// Condicionais
+
+			console.log("Condicionais");
+
+			function retornaSexo(sexo){
+				//M, F
+				//Masculino, Feminino
+			
+				if(sexo === 'M'){				// if(sexo == 'M') Verifica se os valores são iguais.
+					return "Masculino";
+				} else if(sexo === 'F'){
+					return "Feminino";
+				}else{
+					return "Outro";
+				}
+
+				// Ou Switch!!!
+			
+				switch (sexo){
+					case 'M':
+						return "Masculino";
+					case 'F':
+						return "Feminino";
+					default:
+						return "Outro";
+				}
+				
+			}
+			
+			var result = retornaSexo('M');
+
+			console.log(result);
+		</script>
+	</body>
+</html>
