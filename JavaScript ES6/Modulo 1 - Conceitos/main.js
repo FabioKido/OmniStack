@@ -105,11 +105,17 @@ const teste1 = () => ({nome: 'Fabio'});					// Para retorna objeto utiliza-se "(
 console.log(teste());
 console.log(teste1());
 
+
+// Valores Padrão!
+
 function soma(a=1, b=3){								// Valores Padrão! "a=1, b=3"
 		return a+b;
 }
 
 console.log(soma(2));
+
+
+// Desestruturação
 
 const user = {
 	nome: 'Fabio',
@@ -134,3 +140,80 @@ function mostraNome({nome, idade}) {					// Desestruturação
 }
 
 mostraNome(user);
+
+
+// Operadores REST/SPREAD
+
+// REST pega o 'resto' de Desestruturação e de Parametros de Função
+
+const user2 = {
+	nome: 'Diego',
+	idade: 23,
+	empresa: 'Rocketseat'
+};
+
+const { nome2, ...resto } = user2;
+
+console.log(nome);
+console.log(resto);
+
+const arr2 = [1,2,3,4];
+
+const [a,b, ...c] = arr2;
+
+console.log(a);
+console.log(b);
+console.log(c);
+
+/*function somar(...params){
+		return params.reduce((total, next) => total + next);
+}*/
+
+function somar(a,b, ...params){
+		return params;
+}
+
+console.log(somar(1, 3, 4, 4, 5));							// Ex: console.log(1=a, 3=b, "o resto" = params);
+
+// SPREAD
+
+const vet = [1,2,3];
+const vet1 = [4,5,6];
+
+const vet2 = [ ...vet, ...vet1];
+
+console.log(vet2);
+
+const user3 = {												// Usado para modificar uma unica propriedade.
+	nome: 'Kido',
+	idade: 25,
+	empresa: 'Desempregados.org'
+};
+
+const user4 = { ...user3, nome: 'Quido'};
+
+console.log(user4);
+
+// Templates Literals
+
+const nom = 'Fabio';
+const idad = 25;
+
+//console.log('Meu nome é '+nom+' e tenho '+idad+' anos');
+
+console.log(`Meu nome é ${nom} e tenho ${idad} anos.`);			// Usa-se a CRASE (`) em vez das ASPAS ("''")!
+
+
+// Object Short Syntax
+
+const nom1 = 'Fabio';
+const idad1 = 25;
+
+const usuario1 = {												// Não precisa repetir o nome da propriedade
+	nom1,
+	idad1,
+	empresa: 'Rocketseat'
+}
+
+console.log(usuario1);
+

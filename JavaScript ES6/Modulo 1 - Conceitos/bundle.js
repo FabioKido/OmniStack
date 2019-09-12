@@ -1,5 +1,15 @@
 "use strict";
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
@@ -181,4 +191,71 @@ function mostraNome(_ref) {
   console.log(nome, idade);
 }
 
-mostraNome(user);
+mostraNome(user); // Operadores REST/SPREAD
+// REST pega o resto de Desestruturação e de Parametros de Função
+
+var user2 = {
+  nome: 'Diego',
+  idade: 23,
+  empresa: 'Rocketseat'
+};
+
+var nome2 = user2.nome2,
+    resto = _objectWithoutProperties(user2, ["nome2"]);
+
+console.log(nome);
+console.log(resto);
+var arr2 = [1, 2, 3, 4];
+var a = arr2[0],
+    b = arr2[1],
+    c = arr2.slice(2);
+console.log(a);
+console.log(b);
+console.log(c);
+/*function somar(...params){
+		return params.reduce((total, next) => total + next);
+}*/
+
+function somar(a, b) {
+  for (var _len = arguments.length, params = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+    params[_key - 2] = arguments[_key];
+  }
+
+  return params;
+}
+
+console.log(somar(1, 3, 4, 4, 5)); // Ex: console.log(1=a, 3=b, "o resto" = params);
+// SPREAD
+
+var vet = [1, 2, 3];
+var vet1 = [4, 5, 6];
+var vet2 = [].concat(vet, vet1);
+console.log(vet2);
+var user3 = {
+  // Usado para modificar uma unica propriedade.
+  nome: 'Kido',
+  idade: 25,
+  empresa: 'Desempregados.org'
+};
+
+var user4 = _objectSpread({}, user3, {
+  nome: 'Quido'
+});
+
+console.log(user4); // Templates Literals
+
+var nom = 'Fabio';
+var idad = 25; //console.log('Meu nome é '+nom+' e tenho '+idad+' anos');
+
+console.log("Meu nome \xE9 ".concat(nom, " e tenho ").concat(idad, " anos.")); // Usa-se a CRASE (`) em vez das ASPAS ("''")!
+// Object Short Syntax
+
+var nom1 = 'Fabio';
+var idad1 = 25;
+var usuario1 = {
+  // Não precisa repetir o nome da propriedade
+  nom1: nom1,
+  idad1: idad1,
+  empresa: 'Rocketseat'
+};
+console.log(usuario1);
