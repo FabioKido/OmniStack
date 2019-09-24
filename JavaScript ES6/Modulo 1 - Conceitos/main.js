@@ -209,7 +209,7 @@ console.log(`Meu nome é ${nom} e tenho ${idad} anos.`);			// Usa-se a CRASE (`)
 const nom1 = 'Fabio';
 const idad1 = 25;
 
-const usuario1 = {												// Não precisa repetir o nome da propriedade
+const usuario1 = {												// Não precisa repetir o nome da propriedade se forem iguais.
 	nom1,
 	idad1,
 	empresa: 'Rocketseat'

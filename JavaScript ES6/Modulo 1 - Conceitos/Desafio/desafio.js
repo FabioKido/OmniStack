@@ -74,6 +74,8 @@ const redu = usuarios.map(function (item) {
 	return item.idade * 2;
 });
 
+console.log(redu);
+
 const filter2 = usuarios.filter(function (item) {
 	return item.idade <= 50;
 });
@@ -114,3 +116,100 @@ const mostraUsuario = (nom = 'Diego', idad = 18) => (nom, idad);
 
 console.log(mostraUsuario(nome));
 console.log(mostraUsuario(nome,idade));
+
+// 3.4 - Incompleto
+
+/*const promise = function() {
+	return new Promise(function(resolve, reject) {
+		return resolve();
+	})
+}*/
+
+const promise = () => new Promise((resolve, reject) => {
+	setTimeout({resolve('OK')}, 2000);
+});
+
+
+// 4 - Desestruturação
+
+// 4.1
+
+const empresa = {
+		nome3: 'Rocketseat',
+		endereco: {
+		cidade: 'Rio do Sul',
+		estado: 'SC',
+	}
+};
+
+const {nome3, endereco: {cidade, estado} } = empresa;
+
+console.log(nome3);
+console.log(cidade);
+console.log(estado);
+
+// 4.2
+
+const usuario = {
+		nome: 'Diego',
+		idade: 23,
+	 	endereco: {
+		cidade: 'Rio do Sul',
+		uf: 'SC',
+		pais: 'Brasil',
+	}
+};
+
+function mostraInfo({nome, idade}) {
+	return `${nome} tem ${idade} anos.`;
+}
+
+console.log(mostraInfo(usuario));
+
+
+// 5.1 Rest
+
+const arr1 = [1, 2, 3, 4, 5, 6];
+
+const [x, ...y] = arr1;
+
+console.log(x); // 1
+console.log(y); // [2, 3, 4, 5, 6]
+
+function soma(...params){
+		return params.reduce((total, next) => total + next);
+}
+
+console.log(soma(1, 2, 3, 4, 5, 6)); // 21
+console.log(soma(1, 2)); // 3
+
+
+// 5.2 Spread
+
+var usuario2 = { ...usuario, nome: 'Gabriel'};
+console.log(usuario2);
+
+var usuario3 = { ...usuario, endereco: {cidade: 'Lontras', uf: 'SC', pais: 'Brasil'} };
+console.log(usuario3);
+
+
+// 6 - Template Literals
+
+const usuario0 = 'Diego';
+const idade0 = 23;
+
+console.log(`O usuário ${usuario0} possui ${idade0} anos`);
+
+
+// 7 - Object Short Syntax
+
+const nom = 'Diego';
+const idad = 23;
+
+const user0 = {
+	nom,
+	idad,
+	cidade: 'Rio do Sul',
+};
+
+console.log(user0);
