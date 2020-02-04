@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Curso Java Script</title>
+	</head>
+	<body>
+
+		<div id="app">
+		</div>
+
+		<script>
+			// Desafio - Atividade 3
+			
+			var nomes = ["Diego", "Gabriel", "Lucas"];
+
+			var ulElement = document.createElement('ul');
+
+			for(let i = 0; i < nomes.length; i++){
+				
+				var liElement = document.createElement('li');
+				var textElement = document.createTextNode(nomes[i]);
+				
+				liElement.appendChild(textElement);
+				ulElement.appendChild(liElement);
+			}
+
+			var containerElement = document.querySelector('#app');							// Referência o elemento div id="app"
+			containerElement.appendChild(ulElement);
+
+		</script>
+	</body>
+</html>

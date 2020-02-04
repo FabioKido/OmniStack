@@ -14,13 +14,12 @@ function renderTodos() {
 
 	listElement.innerHTML = '';
 
-	for (todo of todos) {
+	for (todo of todos) {										// For especifico para Vetores(Array)
 		var todoElement = document.createElement('li');
 		var todoText = document.createTextNode(todo);
 
 		var linkElement = document.createElement('a');
-		
-		linkElement.setAttribute('href', '#');
+		linkElement.setAttribute('href', '#');					// href é obrigatório a ter
 		
 		var pos = todos.indexOf(todo);
 		linkElement.setAttribute('onclick', 'deleteTodo(' + pos+ ')');
@@ -45,10 +44,10 @@ function addTodo() {
 	saveToStorage();
 }
 
-buttonElement.onclick = addTodo;
+buttonElement.onclick = addTodo;								// Referência a função addTodo
 
 function deleteTodo(pos) {
-	todos.splice(pos, 1);
+	todos.splice(pos, 1);										// Remove na posição o item(ou itens): função para array tipo o 'push'
 	renderTodos();
 	saveToStorage();
 }

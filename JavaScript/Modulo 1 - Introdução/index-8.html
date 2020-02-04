@@ -12,13 +12,18 @@
 				console.log('Hello World!');
 			}
 
-			setInterval(exibeAlgo, 1000);
+
+			// Quando se quiser apenas referenciar uma função(seu escopo) não se utiliza o parêntes "()";
+			// Ela não executa a função, ela apenas a passa como um paramêtro.
+
+			setInterval(exibeAlgo, 1000);					// Executa a cada intervalo de 1 segundo.
 
 			function exibeAlgo2(){
 				console.log('Olá Mundo!');
 			}
 
-			setTimeout(exibeAlgo2, 5000);
+			setTimeout(exibeAlgo2, 5000);					// Executa apenas uma vez, mas com um delay(atraso) de 5 segundos.
+
 		</script>
 	</body>
 </html>

@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<title>Curso Java Script</title>
+	</head>
+	<body>
+
+		<div id="app">
+			<input type="text" name="nome">
+			<button onClick="adicionar()">Adicionar</button>
+		</div>
+
+		<script>
+			// Desafio - Atividade 4
+			
+			var nomes = ["Diego", "Gabriel", "Lucas", "Pedro"];
+
+			var ulElement = document.createElement('ul');
+
+
+			var containerElement = document.querySelector('#app');							// Referência o elemento div="app"
+			containerElement.appendChild(ulElement);
+
+			function adicionar(){
+				var inputElement = document.querySelector('input[name=nome]');
+				var nome = inputElement.value;
+
+				nomes.push(nome);															// Adiciona ao final do Vetor
+				inputElement.value = '';													// Apaga texto já escrito!
+
+				ulElement.innerHTML = '';													// Zera ou limpa o elemento
+				render();
+			}
+
+			function render(){
+
+				for(let i = 0; i < nomes.length; i++){
+							
+					var liElement = document.createElement('li');
+					var textElement = document.createTextNode(nomes[i]);
+
+					liElement.appendChild(textElement);
+					ulElement.appendChild(liElement);
+				}
+			}
+
+// ---------------------------------------------------------------------
+
+			var labelElement = document.createElement('label');
+			var labelText = document.createTextNode('Tema');
+
+			var buttonElement = document.createElement('button');
+			buttonElement.setAttribute('class', 'botao');
+
+			var buttonText = document.createTextNode('Escuro');
+			buttonElement.appendChild(buttonText);
+
+			containerElement.appendChild(labelElement);
+			containerElement.appendChild(buttonElement);
+
+			// variael controladora
+			var v = false;
+
+			buttonElement.onclick = function(){
+				var tema = document.querySelector('body');
+
+				if(v == true){
+					buttonText = document.createTextNode('Escuro');
+					buttonElement.innerHTML = '';
+					buttonElement.appendChild(buttonText);
+					tema.style.color = '#000';
+					tema.style.backgroundColor = '#fff';
+					v = false;
+				}else{
+					buttonText = document.createTextNode('Claro');
+					buttonElement.innerHTML = '';
+					buttonElement.appendChild(buttonText);
+					tema.style.color = '#fff';
+					tema.style.backgroundColor = '#000';
+					v = true;
+				}
+			}
+
+// -------------------------------------------------------------------
+
+			render();
+
+		</script>
+	</body>
+</html>

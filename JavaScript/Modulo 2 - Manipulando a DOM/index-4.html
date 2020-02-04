@@ -13,22 +13,24 @@
 			
 			console.log("Lidando com Elementos");
 
-			var linkElement = document.createElement('a');
+			var linkElement = document.createElement('a');									// Cria elementos
 
-			linkElement.setAttribute('href', 'https://www.google.com.br');
+			linkElement.setAttribute('href', 'https://www.google.com.br');					// Adiciona atributos ao elemento
 			linkElement.setAttribute('title', 'Site do Google');
 
-			var textElement = document.createTextNode('Acessar o site GOOGLE');
+			var textElement = document.createTextNode('Acessar o site GOOGLE');				// Criar elemento
+			linkElement.appendChild(textElement);											// Adiciona elemento filho ao pai
 
-			linkElement.appendChild(textElement);
+			// Fica assim: <a href="https://www.google.com.br" title="Site do Google">Acessar o site GOOGLE</a>
 
-			var containerElement = document.querySelector('#app');
-			
-			containerElement.appendChild(linkElement);
 
-			var inputElement = document.querySelector('#nome');
+			var containerElement = document.querySelector('#app');							// Referência o elemento div="app"
+			containerElement.appendChild(linkElement);										// Adiciona elemento filho à DIV
 
-			containerElement.removeChild(inputElement);						// Remove o elemento input!
+
+			var inputElement = document.querySelector('#nome');								// Referência o input="nome"
+			containerElement.removeChild(inputElement);										// Remove o elemento input
+		
 		</script>
 	</body>
 </html>

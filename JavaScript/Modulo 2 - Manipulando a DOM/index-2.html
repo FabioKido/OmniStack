@@ -6,18 +6,22 @@
 
 		<div id="app">
 			<input type="text" name="nome" id="nome" />
-			<input type="text" name="nome" id="nome2" />
+			<input type="text" name="nome" id="nome2" class="nome" />
 			<button class="botao">Adicionar</button>
 		</div>
 
 		<script>
-			// Trabalhando com a DOM
+			// Trabalhando com a DOM - Referênciar Elements
 			
 			console.log("Trabalhando com a DOM");
-			
-			// var inputElement = document.getElementById('nome');
 
-			var inputElement = document.getElementsByTagName('input')[0];			// document referencia a DOM
+			//document: é uma varivel global que referencia a DOM
+			
+			// var inputElement = document.getElementById('nome');					// Referencia um elemento da DOM
+
+			// Retornam um array sempre. Esse retorna o 'element' de indice 0
+			var inputElement = document.getElementsByTagName('input')[0];			// Referencia um elemento da DOM
+			var inputElement = document.getElementsByClassName('nome')[0];
 
 			console.log(inputElement);
 			

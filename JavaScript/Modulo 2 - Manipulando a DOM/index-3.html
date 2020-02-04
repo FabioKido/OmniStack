@@ -11,23 +11,24 @@
 		</div>
 
 		<script>
-			// Trabalhando com a DOM parte 2
+			// Trabalhando com a DOM parte 2 - Referênciar Elementos
 			
 			console.log("Trabalhando com a DOM parte 2");
 
 			//var inputElement = document.querySelectorAll('input');			// Retorna todos os elementos
 
-			// var inputElement = document.querySelector('div#app input');
+			// var inputElement = document.querySelector('div#app input');		// Retorna elemento de uma div com id: 'app'
 
-			var inputElement = document.querySelector('input[name=nome]');
+			// Query selector: retorna sempre um elemento
+			var inputElement = document.querySelector('input[name=nome]');		// Referência uma propriedade do elemento
 
 			console.log(inputElement);
 
-			var btnElement = document.querySelector('button.botao');			// class="botao"
+			var btnElement = document.querySelector('button.botao');			// Retorna elemento de um botão com class="botao" 
 
 			btnElement.onclick = function(){
 
-				var text = inputElement.value;
+				var text = inputElement.value;									// Pega o valor do/no elemento
 
 				alert(text);
 			}
