@@ -1,7 +1,7 @@
 # OmniStack
 Dominando a OmniStack - Curso JavaScript
 
-Curso realizado no Estágio(no obrigatório) na DF Franquis(empresa de desenvolvimento de softwares)
+Curso realizado no Estágio(Não obrigatório) na DF Franquis(empresa de desenvolvimento de softwares)
 
 Linguagem utilizada: Javascript
 
